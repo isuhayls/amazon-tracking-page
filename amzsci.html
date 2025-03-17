@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Package Tracking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .tracking-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff9900;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #e68a00;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tracking-container">
+        <h2>Amazon Package Tracking</h2>
+        <input type="text" id="trackingNumber" placeholder="Enter Tracking Number">
+        <button onclick="trackPackage()">Track</button>
+        <div class="result" id="trackingResult">
+            <p><strong>Status:</strong> <span id="status">In Transit</span></p>
+            <p><strong>Location:</strong> <span id="location">New York, NY</span></p>
+            <p><strong>Expected Delivery:</strong> <span id="deliveryDate">March 20, 2025</span></p>
+        </div>
+    </div>
+
+    <script>
+        function trackPackage() {
+            var trackingNumber = document.getElementById("trackingNumber").value;
+            if (trackingNumber) {
+                document.getElementById("trackingResult").style.display = "block";
+            } else {
+                alert("Please enter a tracking number");
+            }
+        }
+    </script>
+</body>
+</html>
